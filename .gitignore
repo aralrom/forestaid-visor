@@ -1,0 +1,28 @@
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporales y copias de trabajo
+*.tmp
+*.bak
+*.log
+*.orig
+*_backup.*
+*.html.bak
+
+# Credenciales y configuracion local: nunca deben entrar en este repositorio
+.env
+.env.*
+*.key
+*.pem
+secrets*
+credentials*
