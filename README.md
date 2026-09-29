@@ -29,17 +29,32 @@ El visor ofrece tres vistas:
   posteriores, y las nueve covariables de la celda que determina ese percentil.
   El círculo superpuesto codifica la incertidumbre mediante el grosor del borde.
 - **Rejilla 1 km** — el ráster en el que se basa la agregación municipal.
-- **Histórico** — los diez días anteriores, como imágenes de la rejilla.
+- **Histórico** — los diez días más recientes, como imágenes de la rejilla, con
+  enlace al [archivo](https://aralrom.github.io/forestaid-visor/archivo.html)
+  de todos los mapas publicados.
 
 ## Fecha de los datos
 
-Esta publicación corresponde al **6 de septiembre de 2026**, con histórico del 28
-de agosto al 6 de septiembre de 2026.
+La portada muestra el último día publicado; la fecha figura en su cabecera. El
+archivo conserva los mapas de rejilla de todos los días anteriores desde el 10
+de agosto de 2026, cada uno tal como lo produjo la cadena de datos vigente ese
+día, sin recalcular a posteriori.
 
-El visor es un fichero HTML **estático y autocontenido**: todos los datos van
-incrustados en él y no consulta ningún servicio en el momento de abrirse, salvo
-las teselas de la capa base. No se actualiza solo: refleja la fecha indicada
-arriba hasta que se sustituya por una versión posterior.
+## Estructura
+
+El visor es **estático**: no consulta ningún servicio al abrirse, salvo las
+teselas de la capa base. Para que cada actualización diaria solo añada lo nuevo,
+los recursos van en ficheros separados:
+
+| Ruta | Contenido |
+|---|---|
+| `index.html` | Visor del último día |
+| `archivo.html` | Índice de todos los mapas publicados |
+| `datos/municipios_geom.js` | Geometría simplificada de los 947 municipios (fija) |
+| `datos/valores_k2_AAAAMMDD.js` | Valores municipales de cada día |
+| `mapas/susceptibilidad_k2_AAAAMMDD.png` | Mapa de la rejilla de 1 km de cada día |
+| `mapas/miniaturas/` | Miniaturas de los anteriores |
+| `lib/` | Leaflet 1.9.4 |
 
 ## Atribuciones y licencias de los datos
 
@@ -63,7 +78,7 @@ mapa:
 - **Capa base cartográfica:** © [OpenStreetMap](https://www.openstreetmap.org/copyright)
   contributors, bajo ODbL.
 - **Librería de mapas:** [Leaflet](https://leafletjs.com) 1.9.4, BSD-2-Clause,
-  incrustada en el propio fichero.
+  incluida en `lib/`.
 
 ## Licencia
 
