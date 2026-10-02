@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Susceptibilidad de incendio por municipio — 2026-10-01 (k2)</title>
+<title>Susceptibilidad de incendio por municipio — 2026-10-02 (k2)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="lib/leaflet.css">
 <style>
@@ -96,7 +96,7 @@ html, body { height: 100%; margin: 0; font-family: -apple-system, "Segoe UI", Ar
 </head>
 <body>
 <div id="cabecera">
-  <h1>Susceptibilidad de incendio por municipio — 2026-10-01</h1>
+  <h1>Susceptibilidad de incendio por municipio — 2026-10-02</h1>
   <span class="sub">Modelo K2 · p90 de p_mean por término municipal (856 incendios de entrenamiento)</span>
   <div class="tabs">
     <button class="tab-btn" id="btn-municipal" onclick="mostrarVista('municipal')">Vista municipal</button>
@@ -107,8 +107,8 @@ html, body { height: 100%; margin: 0; font-family: -apple-system, "Segoe UI", Ar
 <div id="mapa"></div>
 <div id="panel-rejilla">
   <div class="contenedor-img">
-    <img id="img-rejilla" src="mapas/susceptibilidad_k2_20261001.png"
-         alt="Mapa de susceptibilidad, rejilla 1km, 2026-10-01"
+    <img id="img-rejilla" src="mapas/susceptibilidad_k2_20261002.png"
+         alt="Mapa de susceptibilidad, rejilla 1km, 2026-10-02"
          onclick="this.classList.toggle('zoom')">
   </div>
   <div class="aviso-zoom">Clic en la imagen para ampliar / reducir</div>
@@ -124,7 +124,7 @@ html, body { height: 100%; margin: 0; font-family: -apple-system, "Segoe UI", Ar
 </div>
 <script src="lib/leaflet.js"></script>
 <script src="datos/municipios_geom.js"></script>
-<script src="datos/valores_k2_20261001.js"></script>
+<script src="datos/valores_k2_20261002.js"></script>
 <script>
 // Geometría (fija) y valores (del día) viajan en ficheros separados en
 // modo web; aquí se vuelven a unir en el GeoJSON que espera el resto.
@@ -142,7 +142,7 @@ mapa.attributionControl.setPrefix(false);
 // HTML autocontenido. Opacidad 0.55 para que los polígonos municipales, que
 // van con fillOpacity 0.85, sigan siendo legibles por encima. No lleva aquí
 // la opción `attribution`: el crédito de OSM ya viene dentro de
-// "Elaboración propia a partir de: precipitación observada de la red XEMA, Servei Meteorològic de Catalunya (datos actualizados a 01/10/2026) · previsión meteorológica ICON-EU, Deutscher Wetterdienst (DWD) · ERA5-Land (Copernicus Climate Change Service) y CEMS Fire Historical (Copernicus Emergency Management Service), <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> · perímetros históricos de incendios forestales, Departament d'Agricultura, Ramaderia, Pesca i Alimentació, Generalitat de Catalunya, <a href='https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies'>Llicència oberta d'ús d'informació — Catalunya</a> · &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors" (construir_texto_creditos(..., incluye_capa_base=True)),
+// "Elaboración propia a partir de: precipitación observada de la red XEMA, Servei Meteorològic de Catalunya (datos actualizados a 02/10/2026) · previsión meteorológica ICON-EU, Deutscher Wetterdienst (DWD) · ERA5-Land (Copernicus Climate Change Service) y CEMS Fire Historical (Copernicus Emergency Management Service), <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> · perímetros históricos de incendios forestales, Departament d'Agricultura, Ramaderia, Pesca i Alimentació, Generalitat de Catalunya, <a href='https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies'>Llicència oberta d'ús d'informació — Catalunya</a> · &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors" (construir_texto_creditos(..., incluye_capa_base=True)),
 // que es la fuente única del pie -- declararlo también en la capa lo
 // duplicaría en el control de atribución.
 // Leaflet coloca las teselas en el `tilePane` y el GeoJSON en el
@@ -179,7 +179,7 @@ const creditoTeselasLocal = abiertoEnLocal
 // 53_generar_mapa_susceptibilidad.py -- texto generado allí, NO duplicado
 // aquí, para que no diverja del pie del PNG de rejilla). Control de
 // atribución de Leaflet: es donde se espera encontrarlo.
-mapa.attributionControl.addAttribution("Elaboración propia a partir de: precipitación observada de la red XEMA, Servei Meteorològic de Catalunya (datos actualizados a 01/10/2026) · previsión meteorológica ICON-EU, Deutscher Wetterdienst (DWD) · ERA5-Land (Copernicus Climate Change Service) y CEMS Fire Historical (Copernicus Emergency Management Service), <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> · perímetros históricos de incendios forestales, Departament d'Agricultura, Ramaderia, Pesca i Alimentació, Generalitat de Catalunya, <a href='https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies'>Llicència oberta d'ús d'informació — Catalunya</a> · &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors" + creditoTeselasLocal);
+mapa.attributionControl.addAttribution("Elaboración propia a partir de: precipitación observada de la red XEMA, Servei Meteorològic de Catalunya (datos actualizados a 02/10/2026) · previsión meteorológica ICON-EU, Deutscher Wetterdienst (DWD) · ERA5-Land (Copernicus Climate Change Service) y CEMS Fire Historical (Copernicus Emergency Management Service), <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a> · perímetros históricos de incendios forestales, Departament d'Agricultura, Ramaderia, Pesca i Alimentació, Generalitat de Catalunya, <a href='https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies'>Llicència oberta d'ús d'informació — Catalunya</a> · &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors" + creditoTeselasLocal);
 
 // El popup de un municipio incluye un <details> plegable (condiciones de la
 // celda determinante). Leaflet solo hace autoPan UNA VEZ, al abrir el popup
@@ -289,12 +289,12 @@ mapa.fitBounds(capa.getBounds(), {padding: [10, 10]});
 const leyenda = L.control({position: 'bottomright'});
 leyenda.onAdd = function() {
   const div = L.DomUtil.create('div', 'leyenda-caja');
-  div.innerHTML = `<h3>Susceptibilidad municipal (p90)</h3><div class="leyenda-fila"><span class="leyenda-color" style="background:#fef0d9"></span>Q1 — 559 municipios (59.0%)</div>
-<div class="leyenda-fila"><span class="leyenda-color" style="background:#fdd49e"></span>Q2 — 118 municipios (12.5%)</div>
-<div class="leyenda-fila"><span class="leyenda-color" style="background:#fdbb84"></span>Q3 — 75 municipios (7.9%)</div>
-<div class="leyenda-fila"><span class="leyenda-color" style="background:#fc8d59"></span>Q4 — 75 municipios (7.9%)</div>
+  div.innerHTML = `<h3>Susceptibilidad municipal (p90)</h3><div class="leyenda-fila"><span class="leyenda-color" style="background:#fef0d9"></span>Q1 — 731 municipios (77.2%)</div>
+<div class="leyenda-fila"><span class="leyenda-color" style="background:#fdd49e"></span>Q2 — 31 municipios (3.3%)</div>
+<div class="leyenda-fila"><span class="leyenda-color" style="background:#fdbb84"></span>Q3 — 2 municipios (0.2%)</div>
+<div class="leyenda-fila"><span class="leyenda-color" style="background:#fc8d59"></span>Q4 — 0 municipios (0.0%)</div>
 <div class="leyenda-fila"><span class="leyenda-color" style="background:#b30000"></span>Q5 — 0 municipios (0.0%)</div>
-<div class="leyenda-fila"><span class="leyenda-color" style="background:#9a9a9a"></span>Fuera de rango — 120 municipios (12.7%)</div>
+<div class="leyenda-fila"><span class="leyenda-color" style="background:#9a9a9a"></span>Fuera de rango — 183 municipios (19.3%)</div>
 <div class="leyenda-sub">Niebla — incertidumbre (p_sd, celda determinante del p90) — grosor continuo, sin techo</div>
 <div class="leyenda-niebla-nota">Tamaños de ejemplo sobre una escala continua sin límite superior (ref. de pendiente: rejilla 15-18/08/2026).</div>
 <div class="leyenda-fila leyenda-niebla-secuencia"><span class="leyenda-circulo" style="border-width:0.50px"></span><span class="leyenda-niebla-valor">0.014</span><span class="leyenda-niebla-flecha">→</span><span class="leyenda-circulo" style="border-width:2.00px"></span><span class="leyenda-niebla-valor">0.070</span><span class="leyenda-niebla-flecha">→</span><span class="leyenda-circulo" style="border-width:3.50px"></span><span class="leyenda-niebla-valor">0.125</span><span class="leyenda-niebla-flecha">→</span><span class="leyenda-circulo" style="border-width:6.50px"></span><span class="leyenda-niebla-valor">0.237</span></div>`;
@@ -370,7 +370,7 @@ mostrarVista('municipal');
 // (a petición de la autora, sesión 2026-08-22). `historico` viene de Python
 // ya en orden "más reciente primero"; `src_thumb`/`src_full` son data URI en
 // base64 en el HTML autocontenido y rutas relativas a mapas/ en modo web.
-const historico = [{"fecha": "2026-10-01", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20261001.png", "src_full": "mapas/susceptibilidad_k2_20261001.png"}, {"fecha": "2026-09-30", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260930.png", "src_full": "mapas/susceptibilidad_k2_20260930.png"}, {"fecha": "2026-09-29", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260929.png", "src_full": "mapas/susceptibilidad_k2_20260929.png"}, {"fecha": "2026-09-28", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260928.png", "src_full": "mapas/susceptibilidad_k2_20260928.png"}, {"fecha": "2026-09-27", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260927.png", "src_full": "mapas/susceptibilidad_k2_20260927.png"}, {"fecha": "2026-09-26", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260926.png", "src_full": "mapas/susceptibilidad_k2_20260926.png"}, {"fecha": "2026-09-25", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260925.png", "src_full": "mapas/susceptibilidad_k2_20260925.png"}, {"fecha": "2026-09-24", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260924.png", "src_full": "mapas/susceptibilidad_k2_20260924.png"}, {"fecha": "2026-09-23", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260923.png", "src_full": "mapas/susceptibilidad_k2_20260923.png"}, {"fecha": "2026-09-22", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260922.png", "src_full": "mapas/susceptibilidad_k2_20260922.png"}];
+const historico = [{"fecha": "2026-10-02", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20261002.png", "src_full": "mapas/susceptibilidad_k2_20261002.png"}, {"fecha": "2026-10-01", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20261001.png", "src_full": "mapas/susceptibilidad_k2_20261001.png"}, {"fecha": "2026-09-30", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260930.png", "src_full": "mapas/susceptibilidad_k2_20260930.png"}, {"fecha": "2026-09-29", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260929.png", "src_full": "mapas/susceptibilidad_k2_20260929.png"}, {"fecha": "2026-09-28", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260928.png", "src_full": "mapas/susceptibilidad_k2_20260928.png"}, {"fecha": "2026-09-27", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260927.png", "src_full": "mapas/susceptibilidad_k2_20260927.png"}, {"fecha": "2026-09-26", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260926.png", "src_full": "mapas/susceptibilidad_k2_20260926.png"}, {"fecha": "2026-09-25", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260925.png", "src_full": "mapas/susceptibilidad_k2_20260925.png"}, {"fecha": "2026-09-24", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260924.png", "src_full": "mapas/susceptibilidad_k2_20260924.png"}, {"fecha": "2026-09-23", "src_thumb": "mapas/miniaturas/susceptibilidad_k2_20260923.png", "src_full": "mapas/susceptibilidad_k2_20260923.png"}];
 
 function fechaLegible(iso) {
   const [y, m, d] = iso.split("-");
@@ -386,7 +386,7 @@ function construirMosaicoHistorico() {
   cont.innerHTML = historico.map((h, i) => `
     <div class="mosaico-item" onclick="abrirLightbox(${i})">
       <img src="${h.src_thumb}" alt="Mapa de susceptibilidad, ${h.fecha}" loading="lazy">
-      <div class="mosaico-fecha">${fechaLegible(h.fecha)}${h.fecha === "2026-10-01" ? " (hoy)" : ""}</div>
+      <div class="mosaico-fecha">${fechaLegible(h.fecha)}${h.fecha === "2026-10-02" ? " (hoy)" : ""}</div>
     </div>
   `).join("");
 }
